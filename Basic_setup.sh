@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a Dumb script to update upgrade and setup a server with apache2 mysql php on a fresh system :)
+# This is a Dumb script to update upgrade and some basic packages :)
 
 clear
 echo ""
@@ -8,26 +8,6 @@ echo "\t""Ubuntu Server Setup!"
 echo ""
 echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
-
-#Run in root
-if [ "$EUID" -ne 0 ]
-  then
-    clear
-    echo ""
-    echo "You must be in root, so let's change pwd"
-    echo ""
-    sudo passwd
-    sudo cp ./c /root/
-    echo ""
-    echo "Run the script again in root"
-    echo ""
-    exit
-  else
-    echo ""
-    read -p "New HostName [server]: " hname
-    echo ""
-    hostname $hname
-fi
 
 # Fun / No Fun ?
 while true
@@ -70,17 +50,15 @@ do
       echo "Updating everything..."
       echo ""
       sleep 2
-      apt -y update
-      apt -y upgrade
+      apt -y update && apt -y upgrade
       sleep 1
       clear
       echo ""
       echo "Installing packages..."
       echo ""
       sleep 2
-      apt -y vim git locate tree htop net-tools unzip fish neofetch
-      apt -y update
-      apt -y upgrade
+      apt -y vim git locate tree htop net-tools unzip tasksel fish neofetch
+      apt -y update && apt -y upgrade
       echo ""
       echo "All done!!!"
       echo ""
@@ -205,7 +183,7 @@ echo ""
 echo "Installing packages..."
 echo ""
 sleep 2
-apt -y install bash vim git locate tree cowsay htop net-tools unzip fish neofetch
+apt -y install bash vim git locate tree cowsay htop net-tools unzip tasksel fish neofetch
 snap install lolcat
 echo ""
 echo "Installing packages - DONE"
