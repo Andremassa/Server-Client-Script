@@ -23,6 +23,7 @@ do
   esac
 done
 
+# Fun / No Fun ?
 while true
 do
   clear
@@ -74,6 +75,6 @@ fi
 
 
 
-bash ./Main_Server_Config.sh
+#bash ./Main_Server_Config.sh
 
-bash ./Apache2_setup.sh
+#bash ./Apache2_setup.sh
