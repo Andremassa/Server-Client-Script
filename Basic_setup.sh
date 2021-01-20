@@ -4,7 +4,7 @@
 
 clear
 echo ""
-echo "\t""Ubuntu Server Setup!"
+echo "\t""Ubuntu Setup!"
 echo ""
 echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
@@ -20,15 +20,19 @@ apt -y update && apt -y upgrade
 
 clear
 echo ""
+echo "\t""Ubuntu Setup!"
+echo ""
+echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo ""
+
 echo "Installing packages..."
 echo ""
 sleep 2
-apt -y vim git locate tree htop net-tools unzip tasksel fish neofetch
+apt -y vim git locate tree htop net-tools unzip
 apt -y update && apt -y upgrade
 echo ""
 echo "All done!!!"
 echo ""
-echo "Goodbye :)"
 sleep 3
 clear
 exit

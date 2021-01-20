@@ -1,14 +1,15 @@
 #!/bin/bash
 
+clear
+echo ""
+echo "\t""Ubuntu Setup!"
+echo ""
+echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo ""
+
 # Execute Script?
 while true
 do
-  clear
-  echo ""
-  echo "\t""Ubuntu Setup!"
-  echo ""
-  echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
-  echo ""
   read -r -p "Execute script? [Y/N] " exe1
 
   case $exe1 in
@@ -28,7 +29,7 @@ if [ "$EUID" -ne 0 ]
   then
     clear
     echo ""
-    echo "You must be in root, so let's change pwd"
+    echo "You must be as root!"
     echo ""
 
     # Change passwd
@@ -64,9 +65,9 @@ if [ "$EUID" -ne 0 ]
       esac
     done
 
-    sudo cp ./c /root/
+    git clone https://github.com/Andremassa/dsfc.git /root/
     echo ""
-    echo "Run the script again in root"
+    echo "Run the script again as root"
     echo ""
     exit
   else
@@ -82,17 +83,21 @@ do
   echo ""
   echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
   echo ""
-  read -r -p "Client [1] | Server [2] " sc
+  read -r -p "Is this Client [1] or Server [2] " sc
 
   case $sc in
     [oO][nN][eE]|[1])
       bash ./Server_setup.sh
       ###
+      exit
   ;;
     [tT][wW][oO]|[2])
       bash ./Client_setup.sh
       ###
+      exit
   ;;
     *)
   esac
 done
+
+exit
