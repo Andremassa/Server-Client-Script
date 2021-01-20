@@ -9,6 +9,26 @@ echo ""
 echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 
+#Run in root
+if [ "$EUID" -ne 0 ]
+  then
+    clear
+    echo ""
+    echo "You must be in root, so let's change pwd"
+    echo ""
+    sudo passwd
+    sudo cp ./c /root/
+    echo ""
+    echo "Run the script again in root"
+    echo ""
+    exit
+  else
+    echo ""
+    read -p "New HostName [server]: " hname
+    echo ""
+    hostname $hname
+fi
+
 # Fun / No Fun ?
 while true
 do
@@ -46,11 +66,6 @@ do
       echo "- Let's get serious!"
       echo ""
       sleep 1
-      echo ""
-      read -p "New HostName: " hostname
-      echo ""
-      sudo passwd
-      clear
       echo ""
       echo "Updating everything..."
       echo ""
