@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a Dumb script to update upgrade and setup a server with apache2 mysql php on a fresh sys :)
+# This is a Dumb script to update upgrade and setup a server with apache2 mysql php on a fresh system :)
 
 clear
 echo ""
