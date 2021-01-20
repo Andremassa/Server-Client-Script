@@ -23,7 +23,57 @@ do
   esac
 done
 
-# Fun / No Fun ?
+# Run in root
+if [ "$EUID" -ne 0 ]
+  then
+    clear
+    echo ""
+    echo "You must be in root, so let's change pwd"
+    echo ""
+
+    # Change passwd
+    while true
+    do
+      read -r -p "Change passwd? " pwdq
+
+      case $pwdq in
+        [yY][eE][sS]|[yY])
+        echo ""
+        sudo passwd
+        break
+      ;;
+        *)
+        break
+      esac
+    done
+
+    # Change HostName
+    while true
+    do
+      read -r -p "Change HostName? " hname
+
+      case $hname in
+        [yY][eE][sS]|[yY])
+        echo ""
+        read -p "New HostName [server]: " hname
+        hostname $hname
+        break
+      ;;
+        *)
+        break
+      esac
+    done
+
+    sudo cp ./c /root/
+    echo ""
+    echo "Run the script again in root"
+    echo ""
+    exit
+  else
+    #
+fi
+
+# Client or server?
 while true
 do
   clear
@@ -32,49 +82,17 @@ do
   echo ""
   echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
   echo ""
-  read -r -p "- No fun [1] | Some fun [2] " exe1
+  read -r -p "Client [1] | Server [2] " sc
 
-  case $exe1 in
-    [yY][eE][sS]|[yY])
-      bash ./Basic_setup.sh
-      exit
-  ;;
-    [oO][nN][eE]|[yY][eE][sS]|[yY]|[1])
-      bash ./Basic_setup.sh
-      exit
+  case $sc in
+    [oO][nN][eE]|[1])
+      bash ./Server_setup.sh
+      ###
   ;;
     [tT][wW][oO]|[2])
-      bash ./Basic_setup_f.sh
-      exit
+      bash ./Client_setup.sh
+      ###
   ;;
     *)
-      bash ./Basic_setup.sh
-      exit
   esac
 done
-
-#Run in root
-if [ "$EUID" -ne 0 ]
-  then
-    clear
-    echo ""
-    echo "You must be in root, so let's change pwd"
-    echo ""
-    sudo passwd
-    sudo cp ./c /root/
-    echo ""
-    echo "Run the script again in root"
-    echo ""
-    exit
-  else
-    echo ""
-    read -p "New HostName [server]: " hname
-    echo ""
-    hostname $hname
-fi
-
-
-
-#bash ./Main_Server_Config.sh
-
-#bash ./Apache2_setup.sh
