@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a Dumb script to update and install some packages I like to install on a fresh sys
+# This is a Dumb script to update upgrade and setup a server with apache2 mysql php on a fresh sys
 
 clear
 echo ""
@@ -170,7 +170,7 @@ echo ""
 echo "Updating the system - DONE"
 sleep 2
 
-# Installing packages
+# Installing basic packages
 clear
 echo ""
 echo "\t""Ubuntu Setup!"
