@@ -41,14 +41,24 @@ do
           *)
         esac
       done
+      clear
       echo ""
       echo "- Let's get serious!"
       echo ""
       sleep 1
+      echo ""
+      read -p "New HostName: " hostname
+      echo ""
+      sudo passwd
+      clear
+      echo ""
       echo "Updating everything..."
       echo ""
+      sleep 2
       apt -y update
       apt -y upgrade
+      sleep 1
+      clear
       echo ""
       echo "Installing packages..."
       echo ""
