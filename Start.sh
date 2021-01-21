@@ -71,8 +71,6 @@ if [ "$EUID" -ne 0 ]
     echo "Run the script again as root"
     echo ""
     exit
-  else
-    #
 fi
 
 # Client or server?
