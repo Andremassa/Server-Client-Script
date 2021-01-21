@@ -1,10 +1,14 @@
 # dsfc - Dumb scripts for class
 
-Cd into the folder dsfc and Start:
+1º git clone https://github.com/Andremassa/dsfc.git
+
+2º Cd into the folder dsfc and Start:
 
 cd ./dsfc
 
 bash ./Start.sh
+
+---
 
 A dumb script for a specific task for class
 
