@@ -2,9 +2,9 @@
 
 clear
 echo ""
-echo "\t""RDP Routing Setup!"
+echo  -e "\t""RDP Routing Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 

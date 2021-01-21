@@ -4,9 +4,9 @@
 
 clear
 echo ""
-echo "\t""Ubuntu Client Setup!"
+echo  -e "\t""Ubuntu Client Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 

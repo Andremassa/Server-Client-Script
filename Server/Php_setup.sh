@@ -2,9 +2,9 @@
 
 clear
 echo ""
-echo "\t""Php Setup!"
+echo  -e "\t""Php Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 

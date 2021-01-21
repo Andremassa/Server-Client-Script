@@ -4,9 +4,9 @@
 
 clear
 echo ""
-echo "\t""Ubuntu Setup!"
+echo  -e "\t""Ubuntu Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
@@ -20,9 +20,9 @@ apt -y update && apt -y upgrade
 
 clear
 echo ""
-echo "\t""Ubuntu Setup!"
+echo  -e "\t""Ubuntu Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 
 echo "Installing packages..."

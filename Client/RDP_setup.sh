@@ -2,9 +2,9 @@
 
 clear
 echo ""
-echo "\t""RDP Client Setup!"
+echo  -e "\t""RDP Client Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 

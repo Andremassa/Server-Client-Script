@@ -2,9 +2,9 @@
 
 clear
 echo ""
-echo "\t""Joomla Setup!"
+echo  -e "\t""Joomla Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
