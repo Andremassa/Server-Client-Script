@@ -20,6 +20,7 @@ do
     bash ./Client/Client_routing.sh
     bash ./Basic_setup.sh
     bash ./Client/RDP_setup.sh
+    clear
 
     exit
   ;;

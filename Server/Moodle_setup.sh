@@ -31,6 +31,7 @@ echo ""
 stty echo
 
 # Database
+echo "Type your MySQL passwd"
 mysql -u root -p << EOF
 CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 create user 'moodle'@'localhost' IDENTIFIED BY '$moodlepwd';

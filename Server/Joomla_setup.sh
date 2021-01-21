@@ -49,6 +49,7 @@ echo ""
 stty echo
 
 # Database
+echo "Type your MySQL passwd"
 mysql -u root -p << EOF
 CREATE DATABASE joomladb;
 create user 'joomla'@'localhost' IDENTIFIED BY '$joomlapwd';
