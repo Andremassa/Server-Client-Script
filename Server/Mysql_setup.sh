@@ -17,7 +17,7 @@ echo ""
 echo ""
 stty echo
 
-mysql -u root --password=$pwd << EOF
+mysql -u root -p << EOF
 ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '$pwd';
 FLUSH PRIVILEGES;
 EOF

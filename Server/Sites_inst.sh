@@ -71,3 +71,5 @@ read -n 1 -s -r -p "Press any key to continue"
 
 chmod -R 0755 /var/www/html/moodle
 chmod -R 755 /var/www/html/joomla
+
+systemctl restart apach2
