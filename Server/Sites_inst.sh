@@ -10,6 +10,7 @@ sleep 3
 
 chmod -R 777 /var/www/html/moodle
 chmod -R 777 /var/www/html/joomla
+read -n 1 -s -r -p "Press any key to continue"
 echo "
 Go to the browser
 
@@ -65,6 +66,8 @@ Password: passwd (the password for the user you created)
 
 -- Press any key when you're done --
 "
+
+read -n 1 -s -r -p "Press any key to continue"
 
 chmod -R 0755 /var/www/html/moodle
 chmod -R 755 /var/www/html/joomla
