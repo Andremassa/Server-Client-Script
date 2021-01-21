@@ -2,9 +2,9 @@
 
 clear
 echo ""
-echo "\t""Ubuntu Setup!"
+echo  -e "\t""Ubuntu Setup!"
 echo ""
-echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
@@ -78,9 +78,9 @@ while true
 do
   clear
   echo ""
-  echo "\t""Ubuntu Setup!"
+  echo  -e "\t""Ubuntu Setup!"
   echo ""
-  echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+  echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
   echo ""
   read -r -p "Is this Client [1] or Server [2] " sc
 
