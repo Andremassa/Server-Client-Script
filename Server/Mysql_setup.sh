@@ -12,13 +12,13 @@ apt -y install mysql-server
 
 stty -echo
 echo ""
-read -r -p "Chose the pwd for root MySQL: " pwd
+read -r -p "Chose the pwd for root MySQL: " mysqlpwd
 echo ""
 echo ""
 stty echo
 
 mysql -u root -p << EOF
-ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '$pwd';
+ALTER user 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '$mysqlpwd';
 FLUSH PRIVILEGES;
 EOF
 

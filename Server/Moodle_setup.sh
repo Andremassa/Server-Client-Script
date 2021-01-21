@@ -25,7 +25,7 @@ chmod -R 777 /var/www/html/moodle
 
 stty -echo
 echo ""
-read -r -p "Chose the pwd for moodle user: " pwd
+read -r -p "Chose the pwd for moodle user: " moodlepwd
 echo ""
 echo ""
 stty echo
@@ -33,7 +33,7 @@ stty echo
 # Database
 mysql -u root -p << EOF
 CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-create user 'moodle'@'localhost' IDENTIFIED BY '$pwd';
+create user 'moodle'@'localhost' IDENTIFIED BY '$moodlepwd';
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON moodle.* TO 'moodle'@'localhost';
 FLUSH PRIVILEGES;
 EOF

@@ -43,7 +43,7 @@ a2enmod rewrite
 
 stty -echo
 echo ""
-read -r -p "Chose the pwd for joomla user: " pwd
+read -r -p "Chose the pwd for joomla user: " joomlapwd
 echo ""
 echo ""
 stty echo
@@ -51,7 +51,7 @@ stty echo
 # Database
 mysql -u root -p << EOF
 CREATE DATABASE joomladb;
-create user 'joomla'@'localhost' IDENTIFIED BY '$pwd';
+create user 'joomla'@'localhost' IDENTIFIED BY '$joomlapwd';
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON joomladb.* TO 'joomla'@'localhost';
 FLUSH PRIVILEGES;
 EOF
