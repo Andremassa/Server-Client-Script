@@ -31,11 +31,11 @@ if [ "$EUID" -ne 0 ]
     clear
     echo ""
     echo "You must be as root!"
-    echo ""
 
     # Change passwd
     while true
     do
+      echo ""
       read -r -p "Change passwd? [Y/N] " pwdq
 
       case $pwdq in
@@ -52,6 +52,7 @@ if [ "$EUID" -ne 0 ]
     # Change HostName
     while true
     do
+      echo ""
       read -r -p "Change HostName? [Y/N] " hname
 
       case $hname in
@@ -66,7 +67,7 @@ if [ "$EUID" -ne 0 ]
       esac
     done
 
-    git clone https://github.com/Andremassa/dsfc.git /root/
+    git clone https://github.com/Andremassa/dsfc.git /root/scrtipt/
     echo ""
     echo "Run the script again as root"
     echo ""
@@ -86,12 +87,12 @@ do
 
   case $sc in
     [oO][nN][eE]|[1])
-      bash ./Server_setup.sh
+      bash ./Client_setup.sh
       ###
       exit
   ;;
     [tT][wW][oO]|[2])
-      bash ./Client_setup.sh
+      bash ./Server_setup.sh
       ###
       exit
   ;;
