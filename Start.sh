@@ -6,6 +6,7 @@ echo "\t""Ubuntu Setup!"
 echo ""
 echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
+sleep 3
 
 # Execute Script?
 while true
@@ -35,7 +36,7 @@ if [ "$EUID" -ne 0 ]
     # Change passwd
     while true
     do
-      read -r -p "Change passwd? " pwdq
+      read -r -p "Change passwd? [Y/N] " pwdq
 
       case $pwdq in
         [yY][eE][sS]|[yY])
@@ -51,7 +52,7 @@ if [ "$EUID" -ne 0 ]
     # Change HostName
     while true
     do
-      read -r -p "Change HostName? " hname
+      read -r -p "Change HostName? [Y/N] " hname
 
       case $hname in
         [yY][eE][sS]|[yY])

@@ -2,17 +2,18 @@
 
 clear
 echo ""
-echo "\t""Routing Setup!"
+echo "\t""Client Routing Setup!"
 echo ""
 echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
+sleep 3
 
 # Server ip (gateway)
 while true
 do
   read -p "Server (gateway) ip: " sip
   echo ""
-  read -r -p "Is this correct: $sip ?" sipq
+  read -r -p "Is this correct: $sip ? [Y/N] " sipq
   case $sipq in
     [yY][eE][sS]|[yY])
     break
@@ -24,6 +25,10 @@ done
 cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 
 nano /etc/netplan/50-cloud-init.yaml
+
+netplan try
+
+exit
 
 # later
 

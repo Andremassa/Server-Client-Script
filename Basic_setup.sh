@@ -8,7 +8,7 @@ echo "\t""Ubuntu Setup!"
 echo ""
 echo "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
-sleep 2
+sleep 3
 
 echo "- Let's get serious!"
 echo ""
@@ -35,4 +35,5 @@ echo "All done!!!"
 echo ""
 sleep 3
 clear
+
 exit
