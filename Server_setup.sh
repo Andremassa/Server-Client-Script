@@ -23,6 +23,8 @@ do
       bash ./Server/Joomla_setup.sh
       bash ./Server/Moodle_setup.sh
       bash ./Server/RDP_routing.sh
+      clear
+      # all done message
 
       exit
   ;;

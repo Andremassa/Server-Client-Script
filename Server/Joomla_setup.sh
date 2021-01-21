@@ -16,8 +16,8 @@ wget 'https://downloads.joomla.org/cms/joomla3/3-9-24/Joomla_3-9-24-Stable-Full_
 mv 'Joomla_3-9-24-Stable-Full_Package.zip?format=zip' /opt/joomla.zip
 unzip /opt/joomla.zip -d /var/www/html/joomla
 
-sudo chown -R www-data:www-data /var/www/html/joomla
-sudo chmod -R 755 /var/www/html/joomla
+chown -R www-data:www-data /var/www/html/joomla
+chmod -R 755 /var/www/html/joomla
 
 echo '<VirtualHost *:80>
      ServerAdmin admin@your-domain.com
