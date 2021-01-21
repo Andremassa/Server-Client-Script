@@ -8,7 +8,7 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
-apt -y install php libapache2-mod-php php-mysql phpmyadmin php-mbstring
+apt -y install php libapache2-mod-php php-mysql phpmyadmin php-mbstring php-intl php-xmlrpc php-soap
 
 phpenmod mbstring
 

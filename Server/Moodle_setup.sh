@@ -20,7 +20,8 @@ chown -R www-data /var/www/moodledata
 
 chmod -R 777 /var/www/moodledata
 
-chmod -R 0755 /var/www/html/moodle
+chmod -R 777 /var/www/html/moodle
+# chmod -R 0755 /var/www/html/moodle # do this after moodle site config
 
 stty -echo
 echo ""
@@ -33,10 +34,23 @@ stty echo
 mysql -u root --password=$pwd << EOF
 CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 create user 'moodle'@'localhost' IDENTIFIED BY '$pwd';
-GRANT ALL PRIVILEGES ON moodle.* TO 'moodle'@'localhost' IDENTIFIED BY '$pwd';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON moodle.* TO 'moodle'@'localhost';
 FLUSH PRIVILEGES;
 EOF
 
 service apache2 restart
 
 exit
+
+# On the platform
+# Navigate, on the moodle webpage, to Site Administration > Server > System Paths
+
+# Input the following;
+
+# Path to du: /usr/bin/du
+
+# Path to apsell: /usr/bin/aspell
+
+# Path to dot: /usr/bin/dot
+
+# Save Changes

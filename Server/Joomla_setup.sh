@@ -52,7 +52,7 @@ stty echo
 mysql -u root --password=$pwd << EOF
 CREATE DATABASE joomladb;
 create user 'joomla'@'localhost' IDENTIFIED BY '$pwd';
-GRANT ALL PRIVILEGES ON joomladb.* TO 'joomla'@'localhost' IDENTIFIED BY '$pwd';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,DROP,INDEX,ALTER ON joomladb.* TO 'joomla'@'localhost';
 FLUSH PRIVILEGES;
 EOF
 
