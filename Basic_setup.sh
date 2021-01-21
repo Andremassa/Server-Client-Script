@@ -28,7 +28,7 @@ echo ""
 echo "Installing packages..."
 echo ""
 sleep 2
-apt -y vim git locate tree htop net-tools unzip
+apt -y install vim git locate tree htop net-tools unzip
 apt -y update && apt -y upgrade
 echo ""
 echo "All done!!!"

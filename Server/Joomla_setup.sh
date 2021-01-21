@@ -42,12 +42,14 @@ a2ensite joomla.conf
 a2enmod rewrite
 
 stty -echo
+echo ""
 read -r -p "Chose the pwd for joomla user: " pwd
+echo ""
 echo ""
 stty echo
 
 # Database
-mysql -u root -p << EOF
+mysql -u root --password=$pwd << EOF
 CREATE DATABASE joomladb;
 create user 'joomla'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON joomladb.* TO 'joomla'@'localhost' IDENTIFIED BY '$pwd';
