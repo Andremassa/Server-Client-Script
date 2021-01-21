@@ -51,7 +51,7 @@ stty echo
 # Database
 mysql -u root --password=$pwd << EOF
 CREATE DATABASE joomladb;
-create user 'joomla'@'localhost' IDENTIFIED BY 'password';
+create user 'joomla'@'localhost' IDENTIFIED BY '$pwd';
 GRANT ALL PRIVILEGES ON joomladb.* TO 'joomla'@'localhost' IDENTIFIED BY '$pwd';
 FLUSH PRIVILEGES;
 EOF
