@@ -1,12 +1,10 @@
-# dsfc
+# dsfc - Dumb scripts for class
 
 Cd into the folder dsfc and Start:
 
 cd ./dsfc
 
 bash ./Start.sh
-
-Dumb scripts for class
 
 A dumb script for a specific task for class
 
