@@ -11,7 +11,7 @@ To my colleagues who want to use this script heres some HELP
 
 (Plz be user root and copy your RSA key into a the server to a file with the name of "key.pem")
 
-1º git clone https://github.com/Andremassa/dsfc.git
+1º git clone https://github.com/Andremassa/Server-Client-Script.git
 
 2º bash ./dsfc/Start.sh  <-- PAY ATTENTION TO ALL QUESTION AND ANSWER THEM ALL!!!!
 
