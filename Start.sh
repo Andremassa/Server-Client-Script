@@ -83,7 +83,7 @@ do
   echo ""
   echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
   echo ""
-  read -r -p "Is this Client [1] or Server [2] " sc
+  read -r -p "Configure a Client [1] or Server [2] " sc
 
   case $sc in
     [oO][nN][eE]|[1])

@@ -13,3 +13,5 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp -m tcp --dport 3389 -j DNAT --to-de
 netfilter-persistent save
 
 exit
+
+####### destination ip ### ask
