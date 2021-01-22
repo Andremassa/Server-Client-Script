@@ -44,7 +44,7 @@ do
 
   Public key - $pkey
 
-  Is this right? " ipkeyq
+  Is this right? [Y/N]" ipkeyq
   case $ipkeyq in
     [yY][eE][sS]|[yY])
       break

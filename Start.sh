@@ -49,24 +49,6 @@ if [ "$EUID" -ne 0 ]
       esac
     done
 
-    # Change HostName
-    while true
-    do
-      echo ""
-      read -r -p "Change HostName? [Y/N] " hname
-
-      case $hname in
-        [yY][eE][sS]|[yY])
-        echo ""
-        read -p "New HostName [server]: " hname
-        hostname $hname
-        break
-      ;;
-        *)
-        break
-      esac
-    done
-
     git clone https://github.com/Andremassa/dsfc.git /root/scrtipt/
     echo ""
     echo "Run the script again as root"
