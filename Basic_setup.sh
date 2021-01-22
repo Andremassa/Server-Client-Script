@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a Dumb script to update upgrade and some basic packages :)
+# Update/Upgrade and some basic packages :)
 
 clear
 echo ""
