@@ -43,13 +43,13 @@ a2enmod rewrite
 
 stty -echo
 echo ""
-read -r -p "Chose the pwd for joomla user: " joomlapwd
+read -r -p "Chose a pwd for joomla user: " joomlapwd
 echo ""
 echo ""
 stty echo
 
 # Database
-echo "Type your MySQL passwd"
+echo "Login into MySQL (passwd)"
 mysql -u root -p << EOF
 CREATE DATABASE joomladb;
 create user 'joomla'@'localhost' IDENTIFIED BY '$joomlapwd';
