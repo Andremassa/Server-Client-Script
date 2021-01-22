@@ -30,9 +30,9 @@ do
       exit
   ;;
     [tT][wW][oO]|[2])
-      bash ./Basic_setup_f.sh
+      #bash ./Basic_setup_f.sh
 
-      exit
+      #exit
   ;;
     *)
   esac
