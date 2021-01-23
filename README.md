@@ -18,4 +18,3 @@ To my colleagues who want to use this script heres some help!
 4º ALL DONE!!!
 
 ---
-https://github-readme-stats.vercel.app/api?username=audhiaprilliant&show_icons=true&hide_border=true
