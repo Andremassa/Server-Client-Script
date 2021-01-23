@@ -35,7 +35,7 @@ done
 while true
 do
   echo ""
-  read -r -p "Type the Client ip -" cip
+  read -r -p "Type the Client ip - " cip
   echo ""
   echo "client ip - $cip"
   read -r -p "Is this right? [Y/N]" ipkeyq
@@ -47,6 +47,8 @@ do
   esac
 done
 
+echo ""
+echo ""
 echo -e "\t Copy your public key into the text editor"
 echo ""
 read -n 1 -s -r -p "- Press any key to to open the text editor -"
@@ -63,7 +65,7 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
-ssh ubuntu@$cip <<'ENDSSH'
+ssh -i ./key.pem ubuntu@$cip <<'ENDSSH'
 sudo pass
 sudo -u root bash ./Client/Client_routing.sh
 sudo -u root bash ./Basic_setup.sh
