@@ -8,6 +8,11 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
+stty -echo
+cd ./Server-Client-Script/
+stty echo
+echo ""
+
 # Execute Script?
 while true
 do

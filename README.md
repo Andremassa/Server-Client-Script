@@ -7,18 +7,14 @@ It also configures a connection to a client in a private subnet and an RDP conne
 
 ---
 
-To my colleagues who want to use this script heres some HELP
-
-(Plz be user root and copy your RSA key into a the server to a file with the name of "key.pem")
+To my colleagues who want to use this script heres some help!
 
 1º git clone https://github.com/Andremassa/Server-Client-Script.git
 
-2º bash ./dsfc/Start.sh  <-- PAY ATTENTION TO ALL QUESTION AND ANSWER THEM ALL!!!!
+2º cd ./erver-Client-Script/
 
-3º Connect to the client and login into root again
+3º bash ./Start.sh  <-- PAY ATTENTION TO ALL QUESTION AND ANSWER THEM ALL!!!!
 
-4º ./dsfc/Start.sh  <-- PAY ATTENTION TO ALL QUESTION AND ANSWER THEM ALL!!!!
-
-5º ALL DONE!!!
+4º ALL DONE!!!
 
 ---
