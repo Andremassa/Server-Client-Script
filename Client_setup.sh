@@ -32,9 +32,20 @@ esac
 done
 
 # Conect to client
-echo "Conect to client"
-echo ""
-read -r -p "Client ip - " cip
+while true
+do
+  echo ""
+  read -r -p "Type the Client ip -" cip
+  echo ""
+  echo "client ip - $cip"
+  read -r -p "Is this right? [Y/N]" ipkeyq
+  case $ipkeyq in
+    [yY][eE][sS]|[yY])
+      break
+  ;;
+    *)
+  esac
+done
 
 echo -e "\t Copy your public key into the text editor"
 echo ""
@@ -52,37 +63,21 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
-while true
-do
-  echo ""
-  read -r -p "Type the Client ip -" cip
-  echo ""
-  echo "client ip - $cip"
-  read -r -p "Is this right? [Y/N]" ipkeyq
-  case $ipkeyq in
-    [yY][eE][sS]|[yY])
-      break
-  ;;
-    *)
-  esac
-done
+ssh ubuntu@$cip <<'ENDSSH'
+sudo pass
+sudo -u root bash ./Client/Client_routing.sh
+sudo -u root bash ./Basic_setup.sh
+sudo -u root bash ./Client/RDP_setup.sh
+ENDSSH
 
-clear
-echo ""
-echo  -e "\t""Ubuntu Client Setup!"
-echo ""
-echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
-echo ""
-sleep 3
+# scp -i ./key.pem ./Server-Client-Script/Client ubuntu@$cip:/home/ubuntu/
 
-scp -i ./key.pem ./Server-Client-Script/Client ubuntu@$cip:/home/ubuntu/
-
-echo "Chage yor sudo passwd and login as root"
-echo ""
-echo "Copy and run the following lines"
-echo -e "\t" "Run \"bash ./Client/Client_routing.sh && bash ./Client/RDP_routing.sh\""
-echo ""
-ssh -i ./key.pem ubuntu@$cip
+# echo "Chage yor sudo passwd and login as root"
+# echo ""
+# echo "Copy and run the following lines"
+# echo -e "\t" "Run \"bash ./Client/Client_routing.sh && bash ./Client/RDP_routing.sh\""
+# echo ""
+# ssh -i ./key.pem ubuntu@$cip
 
 
 # ssh -i $pkey ubuntu@$cip 'sudo bash -s' < ./Client/Client_routing.sh
