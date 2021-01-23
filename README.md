@@ -11,7 +11,7 @@ To my colleagues who want to use this script heres some help!
 
 1º git clone https://github.com/Andremassa/Server-Client-Script.git
 
-2º cd ./erver-Client-Script/
+2º cd ./Server-Client-Script/
 
 3º bash ./Start.sh  <-- PAY ATTENTION TO ALL QUESTION AND ANSWER THEM ALL!!!!
 
