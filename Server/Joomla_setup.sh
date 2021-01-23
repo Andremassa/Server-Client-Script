@@ -49,7 +49,7 @@ echo ""
 stty echo
 
 # Database
-echo "Login into MySQL (passwd)"
+echo "Login into MySQL "
 mysql -u root -p << EOF
 CREATE DATABASE joomladb;
 create user 'joomla'@'localhost' IDENTIFIED BY '$joomlapwd';
@@ -58,5 +58,31 @@ FLUSH PRIVILEGES;
 EOF
 
 systemctl restart apache2
+
+# Webpage Installation
+
+chmod -R 777 /var/www/html/joomla
+
+whiptail --title "Joomla Installation!" --msgbox "Now head to the joomla page and do the following! 3/3
+
+
+- DataBase Type
+
+Choose: mysqli
+
+- DataBase Settings
+
+Host name: localhost
+
+Database: joomladb
+
+User: joomla
+
+Password: passwd (the password for the user you created)
+
+
+Press ok for next page!" 25 70
+
+chmod -R 755 /var/www/html/joomla
 
 exit

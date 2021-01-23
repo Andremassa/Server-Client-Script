@@ -12,9 +12,16 @@ apt -y install apache2
 
 a2enmod ssl
 a2ensite default-ssl.conf
+sudo a2enmod rewrite
 
 # doesnt WORK!!!!! # sed -i.bak 's/DocumentRoot /var/www/html/DocumentRoot /var/www/htmls/g' /etc/apache2/sites-available/default-ssl.conf
-nano /etc/apache2/sites-available/default-ssl.conf
+
+cp /etc/apache2/sites-available/default-ssl.conf.bak /etc/apache2/sites-available/default-ssl.conf
+cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak
+
+cp ./default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+
+#nano /etc/apache2/sites-available/default-ssl.conf
 
 mkdir /var/www/htmls
 

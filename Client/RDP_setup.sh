@@ -15,6 +15,8 @@ apt -y install xrdp
 adduser xrdp ssl-cert
 
 echo ""
+echo "Set a pwd for user ubuntu"
+echo ""
 passwd ubuntu
 
 sudo -u ubuntu echo xfce4-session > ~/.xsession
