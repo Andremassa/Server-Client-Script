@@ -43,7 +43,7 @@ a2enmod rewrite
 
 stty -echo
 echo ""
-read -r -p "Chose a pwd for joomla user: " joomlapwd
+read -r -p "Set a pwd for joomla user: " joomlapwd
 echo ""
 echo ""
 stty echo

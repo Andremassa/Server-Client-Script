@@ -12,7 +12,7 @@ apt -y install mysql-server
 
 stty -echo
 echo ""
-read -r -p "Chose a pwd for root MySQL: " mysqlpwd
+read -r -p "Set a pwd for root MySQL: " mysqlpwd
 echo ""
 echo ""
 stty echo

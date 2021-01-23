@@ -25,7 +25,7 @@ chmod -R 777 /var/www/html/moodle
 
 stty -echo
 echo ""
-read -r -p "Chose a pwd for moodle user: " moodlepwd
+read -r -p "Set a pwd for moodle user: " moodlepwd
 echo ""
 echo ""
 stty echo
