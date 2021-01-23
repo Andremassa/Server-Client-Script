@@ -11,7 +11,7 @@ sleep 3
 # Fun or No Fun?
 while true
 do
-  read -r -p "No Fun [1] | xFunx [2] " fun
+  read -r -p "No Fun [1] | Fun [2] " fun
 
   case $fun in
     [oO][nN][eE]|[yY][eE][sS]|[yY]|[1]|[])
