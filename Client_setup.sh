@@ -17,8 +17,8 @@ do
 
   case $cl in
     [yY][eE][sS]|[yY])
-    bash ./Basic_setup.sh
     bash ./Client/Client_routing.sh
+    bash ./Basic_setup.sh
     bash ./Client/RDP_setup.sh
     bash ./time.sh
     clear
@@ -32,10 +32,19 @@ do
 esac
 done
 
-cip=$(whiptail --title "Client ip" --inputbox "Type the client ip:" 10 60 3>&1 1>&2 2>&3)
-
-if (whiptail --title "Is this correct?" --yesno "Client ip: $cip" --yes-button "yap" --no-button "nop" 10 60) then
-    echo "You chose Yes. Exit status was $?."
+# Client ip (gateway)
+while true
+do
+  read -r -p "Client ip: " cip
+  echo ""
+  read -r -p "Is this correct: $cip ? [Y/N] " cipq
+  case $cipq in
+    [yY][eE][sS]|[yY])
+    break
+  ;;
+    *)
+  esac
+done
 
 # # Conect to client
 # while true
@@ -73,6 +82,8 @@ Login as root and run the script again
 (I could've find a way to do this better but I'm too lazy xD)
 Choose Ok to continue." 11 65
 
+ssh -i ./key.pem ubuntu@$cip
+
 
 
 #scp -i ./key.pem -r ./Server-Client-Script/Client/ ubuntu@$cip:/home/ubuntu/
@@ -96,12 +107,6 @@ Choose Ok to continue." 11 65
 # ssh -i $pkey ubuntu@$cip 'sudo bash -s' < ./Client/Client_routing.sh
 # ssh -i $pkey ubuntu@$cip 'sudo bash -s' < ./Basic_setup.sh
 # ssh -i $pkey ubuntu@$cip 'sudo bash -s' < ./Client/RDP_setup.sh
-
-echo ""
-
-else
-    echo "You chose No. Exit status was $?."
-fi
 
 
 exit

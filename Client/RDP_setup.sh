@@ -19,5 +19,4 @@ passwd ubuntu
 
 sudo -u ubuntu echo xfce4-session > ~/.xsession
 
-
 exit
