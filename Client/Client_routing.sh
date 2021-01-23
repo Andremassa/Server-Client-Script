@@ -26,7 +26,7 @@ cp /etc/netplan/50-cloud-init.yaml.bak /etc/netplan/50-cloud-init.yaml
 
 cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 
-sed -i '14i\            routes:\n            - to: 0.0.0.0/0\n              via: $sip' ./etc/netplan/50-cloud-init.yaml
+sed -i '14i\            routes:\n            - to: 0.0.0.0/0\n              via: $sip' /etc/netplan/50-cloud-init.yaml
 
 netplan try
 

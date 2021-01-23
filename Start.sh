@@ -37,7 +37,6 @@ if [ "$EUID" -ne 0 ]
     while true
     do
       read -r -p "Change passwd? [Y/N] " pwdq
-
       case $pwdq in
         [yY][eE][sS]|[yY])
         echo ""
