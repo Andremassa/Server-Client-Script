@@ -31,7 +31,7 @@ do
 esac
 done
 
-# Client ip (gateway)
+# Client ip
 while true
 do
   echo ""
@@ -55,20 +55,23 @@ echo ""
 nano ./key.pem
 chmod 400 ./key.pem
 
-scp -i ./key.pem -r ./Server-Client-Script/ ubuntu@$cip:/home/ubuntu/
 
-scp -i ./key.pem -r ../Server-Client-Script/ ubuntu@$cip:/home/ubuntu/
+bash ./Client/remote_cs.sh
 
-whiptail --title "Client Setup!" --msgbox "You will be connected to the client
+## scp -i ./key.pem -r ./Server-Client-Script/ ubuntu@$cip:/home/ubuntu/
 
-Login as root and run the script again. (It will be on the cient)
-(I could've find a way to do this better but I'm too lazy xD)
+## scp -i ./key.pem -r ../Server-Client-Script/ ubuntu@$cip:/home/ubuntu/
 
-Choose Ok to continue." 12 70
+## whiptail --title "Client Setup!" --msgbox "You will be connected to the client
 
-ssh -i ./key.pem ubuntu@$cip
+## Login as root and run the script again. (It will be on the cient)
+## (I could've find a way to do this better but I'm too lazy xD)
 
-exit
+## Choose Ok to continue." 12 70
+
+## ssh -i ./key.pem ubuntu@$cip
+
+## exit
 
 #scp -i ./key.pem -r ./Server-Client-Script/Client/ ubuntu@$cip:/home/ubuntu/
 
