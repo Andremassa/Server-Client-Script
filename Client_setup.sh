@@ -31,21 +31,6 @@ do
 esac
 done
 
-# Client ip
-while true
-do
-  echo ""
-  read -r -p "Client ip: " cip
-  echo ""
-  read -r -p "Is this correct: $cip ? [Y/N] " cipq
-  case $cipq in
-    [yY][eE][sS]|[yY])
-    break
-  ;;
-    *)
-  esac
-done
-
 echo ""
 echo -e "\t - Copy your RSA key into the text editor -"
 echo ""
@@ -55,8 +40,7 @@ echo ""
 nano ./key.pem
 chmod 400 ./key.pem
 
-
-bash ./Client/remote_cs.sh
+bash ./Remote_client_setup.sh
 
 ## scp -i ./key.pem -r ./Server-Client-Script/ ubuntu@$cip:/home/ubuntu/
 
