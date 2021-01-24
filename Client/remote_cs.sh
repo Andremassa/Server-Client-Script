@@ -8,6 +8,18 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
+
+PET=$(whiptail --title "Test Free-form Input Box" --inputbox "What is your pet's name?" 10 60 Wigglebutt 3>&1 1>&2 2>&3)
+
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+    echo "Your pet name is:" $PET
+else
+    echo "You chose Cancel."
+fi
+
+
+
 # Server ip (gateway)
 while true
 do
@@ -47,10 +59,10 @@ sed -i "14i\            routes:\n            - to: 0.0.0.0/0\n              via:
 
 netplan try
 
-exit" > ./remote_cr.sh
+exit" > ./Client/remote_cr.sh
 
 scp -i ./key.pem -r ../Client ubuntu@$cip:/home/ubuntu/
 
-ssh -i ../key.pem ubuntu@$cip 'sudo bash -s' < ./remote_cr.sh
+ssh -i ./key.pem ubuntu@$cip 'sudo bash -s' < ./Client/remote_cr.sh
 
-ssh -i ../key.pem ubuntu@$cip 'sudo bash -s' < ./RDP_setup.sh
+ssh -i ./key.pem ubuntu@$cip 'sudo bash -s' < ./Client/RDP_setup.sh
