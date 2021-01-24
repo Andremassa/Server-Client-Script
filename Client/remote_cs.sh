@@ -55,14 +55,22 @@ cp /etc/netplan/50-cloud-init.yaml.bak /etc/netplan/50-cloud-init.yaml
 
 cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 
-sed -i "14i\            routes:\n            - to: 0.0.0.0/0\n              via: $sip" /etc/netplan/50-cloud-init.yaml
+sed -i '14i\            routes:\n            - to: 0.0.0.0/0\n              via: $sip' /etc/netplan/50-cloud-init.yaml
 
 netplan try
 
 exit" > ./Client/remote_cr.sh
 
-scp -i ./key.pem -r ../Client ubuntu@$cip:/home/ubuntu/
+scp -i ./key.pem -r ./Client ubuntu@$cip:/home/ubuntu/
 
-ssh -i ./key.pem ubuntu@$cip 'sudo bash -s' < ./Client/remote_cr.sh
+ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/remote_cr.sh
+ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/RDP_setup.sh
 
-ssh -i ./key.pem ubuntu@$cip 'sudo bash -s' < ./Client/RDP_setup.sh
+# ssh -i ./key.pem ubuntu@$cip <<'ENDSSH'
+# sudo -u root bash /home/ubuntu/Client/remote_cr.sh
+# sudo -u root bash /home/ubuntu/Client/RDP_setup.sh
+# ENDSSH
+
+# ssh -i ./key.pem ubuntu@$cip 'sudo bash -s' < ./Client/remote_cr.sh
+
+# ssh -i ./key.pem ubuntu@$cip 'sudo bash -s' < ./Client/RDP_setup.sh
