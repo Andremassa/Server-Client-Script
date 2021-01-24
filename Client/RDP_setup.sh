@@ -18,7 +18,6 @@ echo ""
 echo "Set a pwd for user ubuntu"
 echo ""
 
-
 sudo -u ubuntu echo xfce4-session > ~/.xsession
 
 exit

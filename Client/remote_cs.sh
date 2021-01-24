@@ -63,6 +63,10 @@ exit" > ./Client/remote_cr.sh
 
 scp -i ./key.pem -r ./Client ubuntu@$cip:/home/ubuntu/
 
+scp -i ./key.pem -r ./Basic_setup.sh ubuntu@$cip:/home/ubuntu/Client
+
+
+ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/Basic_setup.sh
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/remote_cr.sh
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/RDP_setup.sh
 
