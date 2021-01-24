@@ -73,3 +73,5 @@ ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/remote_cr.sh
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/Basic_setup.sh
 
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/RDP_setup.sh
+
+exit

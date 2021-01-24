@@ -73,6 +73,7 @@ do
   case $sc in
     [oO][nN][eE]|[1])
       bash ./Client_setup.sh
+      bash ./Server/time.sh
       ###
       exit
   ;;
