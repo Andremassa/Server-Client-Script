@@ -22,7 +22,7 @@ else
 fi
 echo ""
 
-sip=$(whiptail --title "Client IP" --inputbox "Type the IP of the client you want to configure" 10 60 3>&1 1>&2 2>&3)
+cip=$(whiptail --title "Client IP" --inputbox "Type the IP of the client you want to configure" 10 60 3>&1 1>&2 2>&3)
 
 # # Server ip (gateway)
 # while true

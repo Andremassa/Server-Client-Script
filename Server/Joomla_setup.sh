@@ -63,7 +63,7 @@ systemctl restart apache2
 
 chmod -R 777 /var/www/html/joomla
 
-whiptail --title "Joomla Installation!" --msgbox "Now head to the joomla page and do the following! 3/3
+whiptail --title "Joomla Installation!" --msgbox "Now head to the joomla page and do the following! 1/1
 
 
 - DataBase Type
