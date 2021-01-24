@@ -18,7 +18,7 @@ echo ""
 echo "Set a pwd for user ubuntu"
 echo ""
 
-sudo passwd passwd
+sudo passwd ubuntu
 
 sudo -u ubuntu echo xfce4-session > ~/.xsession
 

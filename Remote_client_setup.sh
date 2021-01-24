@@ -10,7 +10,7 @@ sleep 3
 
 
 # Server ip (gateway)
-sip=$(whiptail --title "Server IP" --inputbox "Type the IP of the server to rout all trafic" 10 60 3>&1 1>&2 2>&3)
+sip=$(whiptail --title "Server IP" --inputbox "Type the IP of the server to route all trafic" 10 60 3>&1 1>&2 2>&3)
 
 if (whiptail --title "WARNING!" --yesno "Imputing the wrong ip will result in a unreachable machine!
 
@@ -21,6 +21,8 @@ else
     exit
 fi
 echo ""
+
+sip=$(whiptail --title "Client IP" --inputbox "Type the IP of the client you want to configure" 10 60 3>&1 1>&2 2>&3)
 
 # # Server ip (gateway)
 # while true
@@ -37,19 +39,18 @@ echo ""
 # done
 
 # Client ip
-while true
-do
-  echo ""
-  read -r -p "Client ip: " cip
-  echo ""
-  read -r -p "Is this correct: $cip ? [Y/N] " cipq
-  case $cipq in
-    [yY][eE][sS]|[yY])
-    break
-  ;;
-    *)
-  esac
-done
+# while true
+# do
+#   read -r -p "Client ip: " cip
+#   echo ""
+#   read -r -p "Is this correct: $cip ? [Y/N] " cipq
+#   case $cipq in
+#     [yY][eE][sS]|[yY])
+#     break
+#   ;;
+#     *)
+#   esac
+# done
 
 echo "#!/bin/bash
 
@@ -67,8 +68,8 @@ scp -i ./key.pem -r ./Client ubuntu@$cip:/home/ubuntu/
 
 scp -i ./key.pem -r ./Basic_setup.sh ubuntu@$cip:/home/ubuntu/Client
 
-ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/Basic_setup.sh
-
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/remote_cr.sh
+
+ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/Basic_setup.sh
 
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/RDP_setup.sh
