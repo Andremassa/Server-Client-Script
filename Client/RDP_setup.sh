@@ -27,6 +27,8 @@ if [ "$EUID" -ne 0 ]
     sudo -u ubuntu echo xfce4-session > ~/.xsession
 fi
 
+sleep 2
+
 #sudo -u ubuntu echo xfce4-session > ~/.xsession
 #echo xfce4-session > ~/.xsession
 
