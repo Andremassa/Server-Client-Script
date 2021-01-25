@@ -81,7 +81,7 @@ User: joomla
 Password: passwd (the password for the user you created)
 
 
-Press ok for next page!" 25 70
+Press ok to close!" 25 70
 
 chmod -R 755 /var/www/html/joomla
 
