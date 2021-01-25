@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# !!!!!! finish note-fun no fun thingy
-
 clear
 echo ""
 echo  -e "\t""Ubuntu Client Setup!"

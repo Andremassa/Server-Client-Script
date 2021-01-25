@@ -12,7 +12,7 @@ sleep 3
 # Server ip (gateway)
 sip=$(whiptail --title "Server IP" --inputbox "Type the IP of the server to route all trafic" 10 60 3>&1 1>&2 2>&3)
 
-if (whiptail --title "WARNING!" --yesno "Imputing the wrong ip will result in a unreachable machine!
+if (whiptail --title "WARNING!" --yesno "Imputing the wrong ip will make the client unreachable!
 
 Is this the correct ip? - $sip" 10 60) then
     echo ""
@@ -72,6 +72,6 @@ ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/remote_cr.sh
 
 ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/Basic_setup.sh
 
-ssh -t -i ./key.pem ubuntu@$cip sudo bash /home/ubuntu/Client/RDP_setup.sh
+ssh -t -i ./key.pem ubuntu@$cip bash /home/ubuntu/Client/RDP_setup.sh
 
 exit
