@@ -20,8 +20,15 @@ echo ""
 
 sudo -u root sudo passwd ubuntu
 
-#sudo -u ubuntu echo xfce4-session > ~/.xsession
+if [ "$EUID" -ne 0 ]
+  then
+    echo xfce4-session > ~/.xsession
+  else
+    sudo -u ubuntu echo xfce4-session > ~/.xsession
+fi
 
-echo xfce4-session > ~/.xsession
+
+#sudo -u ubuntu echo xfce4-session > ~/.xsession
+#echo xfce4-session > ~/.xsession
 
 exit

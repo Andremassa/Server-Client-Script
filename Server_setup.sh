@@ -48,4 +48,12 @@ bash ./Server/Moodle_setup.sh
 bash ./Server/RDP_routing.sh
 clear
 
+echo ""
+echo  -e "\t""Your Server is Ready!"
+echo ""
+echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
+echo ""
+echo "ALL DONE!"
+echo ""
+
 exit
