@@ -17,11 +17,32 @@ unzip /opt/moodle.zip -d /var/www/html
 mkdir /var/www/moodledata
 
 chown -R www-data /var/www/moodledata
-
 chmod -R 777 /var/www/moodledata
 
 # chmod -R 777 /var/www/html/moodle
 # chmod -R 0755 /var/www/html/moodle # do this after moodle site config
+
+echo '<VirtualHost *:80>
+     ServerAdmin admin@your-domain.com
+     DocumentRoot /var/www/html/moodle/
+     ServerName your-domain.com
+     ServerAlias www.your-domain.com
+
+     ErrorLog ${APACHE_LOG_DIR}/error.log
+     CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+     <Directory /var/www/html/moodle/>
+            Options FollowSymlinks
+            AllowOverride All
+            Require all granted
+     </Directory>
+
+</VirtualHost>
+' > /etc/apache2/sites-available/moodle.conf
+
+a2ensite moodle
+a2ensite moodle.conf
+a2enmod rewrite
 
 stty -echo
 echo ""
