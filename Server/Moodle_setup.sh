@@ -8,6 +8,24 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
+# Install Moodle?
+while true
+do
+  read -r -p "Execute script? [Y/N] " exem
+
+  case $exem in
+    [yY][eE][sS]|[yY])
+      break
+  ;;
+    [nN][oO]|[nN])
+      sleep 2
+      exit
+  ;;
+    *)
+  esac
+done
+
+
 mkdir /opt
 
 wget 'https://download.moodle.org/download.php/direct/stable310/moodle-3.10.1.zip'

@@ -8,6 +8,24 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
+# Install Joomla?
+while true
+do
+  read -r -p "Execute script? [Y/N] " exej
+
+  case $exej in
+    [yY][eE][sS]|[yY])
+      break
+  ;;
+    [nN][oO]|[nN])
+      sleep 2
+      exit
+  ;;
+    *)
+  esac
+done
+
+
 apt -y install php-xml php-zip
 
 mkdir /opt
