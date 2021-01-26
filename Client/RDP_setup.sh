@@ -8,6 +8,23 @@ echo  -e "\t"$(date "+DATE: %D") "\n""\t"$(date "+TIME: %T")
 echo ""
 sleep 3
 
+# configure RDP?
+while true
+do
+  read -r -p "Execute script? [Y/N] " exerdp
+
+  case $exerdp in
+    [yY][eE][sS]|[yY])
+      break
+  ;;
+    [nN][oO]|[nN])
+      sleep 2
+      exit
+  ;;
+    *)
+  esac
+done
+
 sudo apt -y install xfce4 xfce4-goodies
 
 sudo apt -y install xrdp
