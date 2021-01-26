@@ -25,7 +25,6 @@ do
   esac
 done
 
-
 apt -y install php-xml php-zip
 
 mkdir /opt

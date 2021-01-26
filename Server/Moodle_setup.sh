@@ -25,7 +25,6 @@ do
   esac
 done
 
-
 mkdir /opt
 
 wget 'https://download.moodle.org/download.php/direct/stable310/moodle-3.10.1.zip'
